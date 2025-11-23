@@ -110,8 +110,7 @@ public class BaseClass  {
 			//			initializeJavaScriptExecutor(driver);
 			//			initializeAction(driver);
 
-			loginPage = new LoginPage(driver);
-			PageFactory.initElements(driver, loginPage);
+			
 			dashboardPage = new DashboardPage(driver);
 			//			navigateApp(url, driver);
 		}
@@ -125,6 +124,7 @@ public class BaseClass  {
 	 */
 	@BeforeMethod
 	public void beforeMethodTest() {
+		loginPage = new LoginPage(driver);
 		loginPage.loginAction(username, password);
 	}
 	/**
