@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -110,6 +111,7 @@ public class BaseClass  {
 			//			initializeAction(driver);
 
 			loginPage = new LoginPage(driver);
+			PageFactory.initElements(driver, loginPage);
 			dashboardPage = new DashboardPage(driver);
 			//			navigateApp(url, driver);
 		}
