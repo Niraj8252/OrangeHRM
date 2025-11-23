@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -16,10 +15,6 @@ import org.testng.annotations.BeforeSuite;
 
 import com.orangeHRM.elementRepository.DashboardPage;
 import com.orangeHRM.elementRepository.LoginPage;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-
 
 
 /**
@@ -83,7 +78,7 @@ public class BaseClass  {
 			switch(browser) {
 			case "chrome":
 
-				WebDriverManager.chromedriver().setup();
+//				WebDriverManager.chromedriver().setup();
 //				ChromeOptions options = new ChromeOptions();
 //				options.addArguments("--headless=new");
 //				options.addArguments("disable-infobars");
@@ -92,18 +87,18 @@ public class BaseClass  {
 				break;
 
 			case "firefox":
-				WebDriverManager.firefoxdriver().setup();
+//				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 				break;
 
 			case "edge":
-				WebDriverManager.edgedriver().setup();
+//				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
 				break;
 
 			default:
 				System.out.println("please specify proper browser key");
-				WebDriverManager.chromedriver().setup();
+//				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 				break;
 			}

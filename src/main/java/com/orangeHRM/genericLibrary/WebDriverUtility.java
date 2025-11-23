@@ -2,10 +2,9 @@ package com.orangeHRM.genericLibrary;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -66,7 +65,7 @@ private static WebDriverUtility instance;
 	 * @param driver
 	 */
 	public void waitImplicitlyWaitTillPageLoad(long longTimeOut, WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeOut));
 	}
 	/**
 	 * This method is used to maximize the browser 
@@ -97,7 +96,7 @@ private static WebDriverUtility instance;
 	 * @param timeOut
 	 */
 	public void explicitlyWait(WebDriver driver, long timeOut) {
-		 wait = new WebDriverWait(driver, timeOut);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 	}
 	/**
 	 * This method is used to explicitly wait till the particular element visible

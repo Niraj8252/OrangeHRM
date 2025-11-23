@@ -5,13 +5,14 @@ import org.testng.annotations.Test;
 
 import com.orangeHRM.genericLibrary.BaseClass;
 
-public class VerifyDashboardPage extends BaseClass {
+public class VerifyDashboardPageTest extends BaseClass {
 	
 	@Test
-	public void verifyDashboardPage() {
+	public void verifyDashboardPageTest() {
 		
 		String dashboardText = excelFileUtility.getDataFromExcelFile("OrangeHRM", 1, 0);
-		Assert.assertEquals(dashboardText, dashboardPage.getDashboardText().trim());
+		System.out.println(dashboardPage.getDashboardText());
+		Assert.assertEquals(dashboardText, dashboardPage.getDashboardText());
 	}
 
 }
